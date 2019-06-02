@@ -1,0 +1,25 @@
+version: v1
+name: idexsample
+
+contract:
+  address: '0x2a0c0DBEcC7E4D658f48E01e3fA353F44050c208'
+  path: ./contracts/Exchange.sol
+  name: Exchange
+  compilerVersion: 0.4.16
+
+blockchain:
+  platform: ethereum
+  network: mainnet
+
+handlers:
+  idex-deposit:
+    event: Deposit(address,address,uint256,uint256)
+
+  idex-withdraw:
+    event: Withdraw(address,address,uint256,uint256)
+
+webhook:
+  url: http://a122303c.ngrok.io
+  method: POST
+  headers: 
+    Authorization: 'Bearer YOUR-OWN-TOKEN'

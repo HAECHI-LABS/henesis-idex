@@ -19,7 +19,7 @@ handlers:
     event: Withdraw(address,address,uint256,uint256)
 
 webhook:
-  url: http://a122303c.ngrok.io
+  url: http://localhost:8080
   method: POST
   headers: 
     Authorization: 'Bearer YOUR-OWN-TOKEN'

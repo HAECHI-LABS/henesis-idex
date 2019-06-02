@@ -1,4 +1,4 @@
-version: v1
+version: v2
 name: idexsample
 
 contract:
@@ -14,9 +14,19 @@ blockchain:
 handlers:
   idex-deposit:
     event: Deposit(address,address,uint256,uint256)
+    version: v1
+    runtime: tsnode8
+    path: ./handlers/deposit.ts
+    dep: ./handlers/package.json
+    function: deposit
 
   idex-withdraw:
     event: Withdraw(address,address,uint256,uint256)
+    version: v1
+    runtime: tsnode8
+    path: ./handlers/withdraw.ts
+    dep: ./handlers/package.json
+    function: withdraw
 
 webhook:
   url: http://localhost:8080

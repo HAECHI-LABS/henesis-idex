@@ -61,9 +61,9 @@ var erc20 = [
 ];
 
 
-exports.withdraw = async (web3: any, msg: any): Promise<any> => {
-  var args = msg.event.payload.data;
-  console.log('EVENT', msg.event);
+exports.withdraw = async (web3, event: Ethereum.Event, blockMeta: Ethereum.BlockMeta, userMeta: Ethereum.UserMeta): Promise<any> => {
+  var args = event.payload.data;
+  console.log('EVENT', event);
 
   var token = args['token'].value;
   var amount = args['amount'].value;
